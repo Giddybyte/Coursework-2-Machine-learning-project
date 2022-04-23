@@ -6,16 +6,15 @@
 #Overview
 
 '''
-The Project contains four Python Notebooks designed to run on
+The Project contains two Python Notebooks designed to run on
 Google Colab.
 
-1.0 Preprocessing
+1.0 Preprocessing and Implementation
 
 2.0 Analysis of 20 NewsGroups Data.ipynb
 
-3.0 Simple Models (Chen code)
 
-4.0 Advanced Models (Gideon code)
+Code 1.0 consists of 3 sections. Pre-processing, Simple models and Advanced Models.
 
 '''
 
@@ -139,113 +138,11 @@ y_test_en=keras.utils.to_categorical(y_test_en)
 y_validation_en=keras.utils.to_categorical(y_validation_en)
 
 
-#######################################################################
-
-2.0 Data Analysis
-
-#######################################################################
-
-## Description:
-
-'''Perform data analysis of the cleaned 20NewsGroups training data set
-1) Summary Statistics of Data
-
-2) Most common words for each category
-
-3) Analysis of Parts of Speech
-
-4) Bigram analysis
-
-data is imported as csv after text cleaning, but pre-vectorising.
-
-'''
-
-## Installation: 
-install pandas
-install numpy
-install collections
-install matplotlib
-install re
-install nltk
-
-## Usage:
-```
-## load cleaned data
-'''ensure 1.0 Data Preprocessing.ipynb has been run'''
-
-train_cleaned_df = pd.read_csv(proj_dir+'train_cleaned_data.csv')
-
-```
-
-```
-## Summary Statistics of Data
-
-## Most Common words for each category
-
-#Installation
-from collections import Counter
-import matplotlib.pyplot as plt
-import re
-
-#Description
-''' count total of each word '''
-d = Counter(vocab)
-
-'''Creates bar chars for each category dsiplaying 10 most common words'''
-plt.bar(words, counts)
-
-```
-
-```
-## Analysis of Parts of Speech
-''' Identify the number of nouns and verbs etc in each group and display as a stacked bar chart '''
-
-#Counting words
-''' this function counts the number of nouns '''
-def NounCount(x):
-
-''' this function counts the number of verbs'''
-def VerbCount(x):
-
-''' this function counts thenumber of adverbs'''
-def AdverbCount(x):
-
-''' this function counts the number of adjectives'''
-def AdjectiveCount(x):
-
-''' this function counts the number of words which are neither nouns, adverbs, verbs or adjectives
-def OtherCount(x):
-
-#Visualisatons
-''' visualisation to show split of word types'''
-ax = train_cl_gr_df.plot.barh(stacked=True,  title='POS Categorisation', x='folder name')
-
-'''Show the POS values as the proportion of the total number of words for each category''' 
-ax = train_pos_df_scaled.plot.barh(stacked=True,  title='POS Categorisation (Scaled)', x='folder name')
-
-```
-
-
-
-## Bigram Analysis
-from nltk import bigrams
-import matplotlib.pyplot as plt
-
-'''This section calculates the most frequently occuring bigrams'''
-
-
-# plot most frequent bigrams in whole text
-'''calculate frequency of bigrams using bigrams from nltk'''
-
-#Calculate Pointwise mutiual information'''
-# Using BigramAssocMeasures, BigramCollocationFinders
-
-
 
 
 #######################################################################
 
-3.0 Basic Models (Chen code)
+1.2 Basic Models (Chen code)
 
 #######################################################################
 
@@ -360,7 +257,7 @@ _, test_accuracy = model.evaluate(x=x_test, y=y_test, verbose=0)
 
 #######################################################################
 
-4.0 Advanced Models (Gideon code)
+1.3 Advanced Models (Gideon code)
 
 #######################################################################
 
@@ -1075,6 +972,115 @@ probabilities = end_to_end_model.predict(
 )
 
 class_names[np.argmax(probabilities[0])]
+
+
+
+
+#######################################################################
+
+2.0 Data Analysis
+
+#######################################################################
+
+## Description:
+
+'''Perform data analysis of the cleaned 20NewsGroups training data set
+1) Summary Statistics of Data
+
+2) Most common words for each category
+
+3) Analysis of Parts of Speech
+
+4) Bigram analysis
+
+data is imported as csv after text cleaning, but pre-vectorising.
+
+'''
+
+## Installation: 
+install pandas
+install numpy
+install collections
+install matplotlib
+install re
+install nltk
+
+## Usage:
+```
+## load cleaned data
+'''ensure 1.0 Data Preprocessing.ipynb has been run'''
+
+train_cleaned_df = pd.read_csv(proj_dir+'train_cleaned_data.csv')
+
+```
+
+```
+## Summary Statistics of Data
+
+## Most Common words for each category
+
+#Installation
+from collections import Counter
+import matplotlib.pyplot as plt
+import re
+
+#Description
+''' count total of each word '''
+d = Counter(vocab)
+
+'''Creates bar chars for each category dsiplaying 10 most common words'''
+plt.bar(words, counts)
+
+```
+
+```
+## Analysis of Parts of Speech
+''' Identify the number of nouns and verbs etc in each group and display as a stacked bar chart '''
+
+#Counting words
+''' this function counts the number of nouns '''
+def NounCount(x):
+
+''' this function counts the number of verbs'''
+def VerbCount(x):
+
+''' this function counts thenumber of adverbs'''
+def AdverbCount(x):
+
+''' this function counts the number of adjectives'''
+def AdjectiveCount(x):
+
+''' this function counts the number of words which are neither nouns, adverbs, verbs or adjectives
+def OtherCount(x):
+
+#Visualisatons
+''' visualisation to show split of word types'''
+ax = train_cl_gr_df.plot.barh(stacked=True,  title='POS Categorisation', x='folder name')
+
+'''Show the POS values as the proportion of the total number of words for each category''' 
+ax = train_pos_df_scaled.plot.barh(stacked=True,  title='POS Categorisation (Scaled)', x='folder name')
+
+```
+
+
+
+## Bigram Analysis
+from nltk import bigrams
+import matplotlib.pyplot as plt
+
+'''This section calculates the most frequently occuring bigrams'''
+
+
+# plot most frequent bigrams in whole text
+'''calculate frequency of bigrams using bigrams from nltk'''
+
+#Calculate Pointwise mutiual information'''
+# Using BigramAssocMeasures, BigramCollocationFinders
+
+
+
+
+
 
 #######################################################################
 ## License:
