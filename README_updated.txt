@@ -9,9 +9,9 @@
 The Project contains two Python Notebooks designed to run on
 Google Colab.
 
-1.0 Preprocessing and Implementation
+1.0 1 Submission Preprocessing and Implementation.ipynb   (Preprocessing and Implementation)
 
-2.0 Analysis of 20 NewsGroups Data.ipynb
+2.0 Analysis of 20 NewsGroups Data.ipynb             (Data Analysis)
 
 
 Code 1.0 consists of 3 sections. Pre-processing, Simple models and Advanced Models.
@@ -30,11 +30,31 @@ drive.mount('/content/drive')
 data sets should be in this location
 proj_dir='/content/drive/MyDrive/Colab Notebooks/doc2vec/' 
 
-#Ensure the GPU runtime is selected when running code 3.0 and 4.0 
+#Ensure the GPU runtime is selected when running code 1.0 when running Keras functions
+
+
+# Alternaive Data Collection
+'''
+The data set can be obtained from many sources. The following is one method to download the data as a tar.gz
+file which wil then need to be unzipped
+
+'''
+
+pip install wget
+import wget
+site_url = 'http://qwone.com/~jason/20Newsgroups/20news-bydate.tar.gz'
+file_name = wget.download(site_url)
+#print(file_name)
+import tarfile
+my_tar = tarfile.open(file_name)
+my_tar.extractall(path) # specify which folder to extract to
+my_tar.close()
+
+
 
 #######################################################################
 
-1.0 Data Preprocessing
+NoteBook 1 Submission Preprocessing and Implementation.ipynb
 
 #######################################################################
 
@@ -978,7 +998,7 @@ class_names[np.argmax(probabilities[0])]
 
 #######################################################################
 
-2.0 Data Analysis
+NoteBook 2_0_Analysis_of_20_NewsGroups_Data_Submission.ipynb
 
 #######################################################################
 
