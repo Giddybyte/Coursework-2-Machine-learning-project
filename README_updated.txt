@@ -33,10 +33,10 @@ proj_dir='/content/drive/MyDrive/Colab Notebooks/doc2vec/'
 #Ensure the GPU runtime is selected when running code 1.0 when running Keras functions
 
 
-# Alternaive Data Collection
+# Accessing Data
 '''
-The data set can be obtained from many sources. The following is one method to download the data as a tar.gz
-file which wil then need to be unzipped
+# Method 1: The data  can be obtained from many sources. The following is one method to
+download the data as a tar.gz file which wil then need to be unzipped
 
 '''
 
@@ -50,7 +50,10 @@ my_tar = tarfile.open(file_name)
 my_tar.extractall(path) # specify which folder to extract to
 my_tar.close()
 
+'''
+# Method 2: The data can also be sourced directly from sklearn
 
+'''
 
 #######################################################################
 
